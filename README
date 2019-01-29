@@ -46,6 +46,7 @@ Note:
 * You will need the following packages to be installed:
   - squashfs-tools
   - genisoimage or mkisofs
+  - aufs-dkms
   - zip
 
 
