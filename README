@@ -1,4 +1,4 @@
-Linux Live Kit
+LiveLinux
 ==============
 
 Use this set of scripts to turn your existing preinstalled Linux
@@ -49,5 +49,5 @@ Note:
   - aufs-dkms
   - zip
 
+Author: Tomas M. <http://www.linux-live.org> and Olaf Koch <http://mediakit.education>
 
-Author: Tomas M. <http://www.linux-live.org>
