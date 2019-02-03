@@ -46,7 +46,7 @@ echo "device="${dev}
 echo "(Enter to continue/STRG-C to abort)"
 tput sgr0
 read
-exit
+#exit
 
 ###
 
