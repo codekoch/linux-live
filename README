@@ -8,19 +8,16 @@ since it creates some (sym)links and such.
 
 Usage: 
 
->git clone https://github.com/codekoch/livelinux
->cd livelinux 
-make some changes in config (see below)..i.e. >nano ./config  
->./build
-
-Note:
-
 * Store Linux Live kit in a directory which is not going to be included
   in your live distro, else it would be copied to it. Best practice is to
   make a directory such as /a and put these scripts there.
   Be warned, if you put it to /tmp, some distros may erase it on reboot.
 
-* Before you start building your Kit, edit the file ./config
+>cd <directory mentioned above>  
+>git clone https://github.com/codekoch/livelinux
+>cd livelinux 
+
+* Before you start building your Kit, edit the file ./config (nano ./config)
   Most importantly change the LIVEKITNAME variable and the LIVEKITDATA path.
 
 * Make sure your kernel is in /boot/vmlinuz or change the path in ./config
@@ -48,7 +45,9 @@ Note:
 
 * When done, run the ./build script to create your Live Kit
 
-* You will need the following packages to be installed:
+>./build.sh
+
+* The following packages will be installed if they are not available:
   - squashfs-tools
   - genisoimage or mkisofs
   - aufs-dkms
