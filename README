@@ -6,6 +6,13 @@ distribution into a Live Kit (formely known as Live CD or Live USB Stick).
 Make sure to extract and use it on a posix-compatible filesystem,
 since it creates some (sym)links and such.
 
+Usage: 
+
+>git clone https://github.com/codekoch/livelinux
+>cd livelinux 
+make some changes in config (see below)..i.e. >nano ./config  
+>./build
+
 Note:
 
 * Store Linux Live kit in a directory which is not going to be included
@@ -50,5 +57,5 @@ Note:
 * After the successful build you will find your livelinux system under the path
   given by LIVEKITDATA
  
-* to create a bootable device you can use the script createBootDevice.,sh un der scripts
+* to create a bootable device you can use the script createBootDevice.sh under scripts
  
