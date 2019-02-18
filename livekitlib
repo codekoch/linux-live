@@ -611,7 +611,14 @@ persistent_changes()
 
    # Setup the directory anyway, it will be used in all cases
    mkdir -p "$2"
-
+   
+    # check if changes should be removed by restart
+   if grep -q nochange /proc/cmdline; then
+       echo_green_star
+       echo "deleting old changes"
+       rm -rf $CHANGES/*
+   fi
+   
    # If persistent changes are not requested, end here
    if grep -vq perch /proc/cmdline; then
       return
