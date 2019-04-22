@@ -6,11 +6,16 @@ turns an existing preinstalled Linux System into a Live Kit. This version is a f
 1. Store Linux Live kit in a directory which is not going to be included
 in your live distro i.e. a/:
 >sudo mkdir a/
+
 >cd /a
+
 >git clone https://github.com/codekoch/livelinux
+
 2. Before you start building your Kit, edit the file ./config
 >cd livelinux
+
 >sudo nano ./config
+
 -Most importantly change the LIVEKITNAME variable and the LIVEKITDATA path.
 -Make sure you have enough RAM on the given LIVEKITDATA path since LiveKit will store lots of data there. If you are low on RAM,
   make sure LIVEKITDATA is a regular on-disk directory.
@@ -32,6 +37,7 @@ in your live distro i.e. a/:
   recompiling. This step is not needed if you plan to boot from USB only.
 4. When done, run the ./build script to create your Live Kit
 >sudo ./build.sh
+
 -The following packages will be installed if they are not available:
   -- squashfs-tools
   -- genisoimage or mkisofs
@@ -45,7 +51,6 @@ in your live distro i.e. a/:
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Tomas M.** - *initial work* - [Live Linux Kit](http://www.linux-live.org/)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
+* **Olaf Koch** - *changes for mediakit version* - [mediakit](http://mediakit.education)
