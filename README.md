@@ -1,6 +1,6 @@
-# Project Title
+# livelinux 
 
-One Paragraph of project description goes here
+creates a mediakit x86 version based on a preinstalled Linux System (Debian, Ubuntu etc.)
 
 ## Getting Started
 
