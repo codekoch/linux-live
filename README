@@ -1,4 +1,4 @@
-LiveLinux
+# LiveLinux
 ==============
 
 Use this set of scripts to turn your existing preinstalled Linux
@@ -6,6 +6,7 @@ distribution into a Live Kit (formely known as Live CD or Live USB Stick).
 Make sure to extract and use it on a posix-compatible filesystem,
 since it creates some (sym)links and such.
 
+## Get started
 Usage: 
 
 * Store Linux Live kit in a directory which is not going to be included
