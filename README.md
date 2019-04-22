@@ -1,74 +1,47 @@
 # livelinux 
 
-creates a mediakit x86 version based on a preinstalled Linux System (Debian, Ubuntu etc.)
+turns an existing preinstalled Linux System into a Live Kit. This version is a fork from Tomas-M/linux-live and is specially used to create mediakit x86 version based on a preinstalled Debian Distribution (see http://mediakit.education) 
 
 ## Getting Started
+1. Store Linux Live kit in a directory which is not going to be included
+in your live distro i.e. a/:
+>sudo mkdir a/
+>cd /a
+>git clone https://github.com/codekoch/livelinux
+2. Before you start building your Kit, edit the file ./config
+>cd livelinux
+>sudo nano ./config
+-Most importantly change the LIVEKITNAME variable and the LIVEKITDATA path.
+-Make sure you have enough RAM on the given LIVEKITDATA path since LiveKit will store lots of data there. If you are low on RAM,
+  make sure LIVEKITDATA is a regular on-disk directory.
+-Make sure your kernel is in /boot/vmlinuz or change the path
+-Your kernel must support squashfs and aufs. Debian Jessie's kernel does.
+3. Optional:
+-You may also wish to replace boot graphics in ./bootfiles/bootlogo.png
+  and reorganize isolinux.cfg to fit your needs (when editing the file,
+  keep all paths in /boot/, it will be rellocated during LiveKit creation)
+-Linux Live Kit comes with precompiled static binaries in ./initramfs
+  directory. Those may be outdated but will work. You may replace them
+  by your own statically linked binaries, if you know how to compile them.
+-If you plan to boot your Live Kit from CD, you need to recompile
+  syslinux.bin else it won't be able to boot your Live Kit from directory
+  LIVEKITNAME. There is a script prepared for you which will handle all
+  of that. Simply go to directory ./tools/ and run isolinux.bin.update ...
+  it will update ./bootfiles/isolinux.bin automatically by downloading
+  isolinux sources, patching them using your actual LIVEKITNAME and
+  recompiling. This step is not needed if you plan to boot from USB only.
+4. When done, run the ./build script to create your Live Kit
+>sudo ./build.sh
+-The following packages will be installed if they are not available:
+  -- squashfs-tools
+  -- genisoimage or mkisofs
+  -- aufs-dkms
+  -- zip
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+5. After the successful build you will find your livelinux system under the path
+  given by LIVEKITDATA
+ 
+6. To create a bootable device you can use the script createBootDevice.sh under scripts
 
 ## Authors
 
@@ -76,12 +49,3 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
