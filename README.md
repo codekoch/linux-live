@@ -3,15 +3,14 @@
 turns an existing preinstalled Linux System into a Live Kit. This version is a fork from Tomas-M/linux-live and is specially used to create mediakit x86 version based on a preinstalled Debian Distribution (see http://mediakit.education) 
 
 ## Getting Started
-1. Store Linux Live kit in a directory which is not going to be included
-in your live distro i.e. a/:
+**1.** Store Linux Live kit in a directory which is not going to be included in your live distro i.e. a/:
 >sudo mkdir a/
 
 >cd /a
 
 >git clone https://github.com/codekoch/livelinux
 
-2. Before you start building your Kit, edit the file ./config
+**2.** Before you start building your Kit, edit the file ./config
 >cd livelinux
 
 >sudo nano ./config
@@ -25,7 +24,8 @@ in your live distro i.e. a/:
 
 -Your kernel must support squashfs and aufs. Debian Jessie's kernel does.
 
-3. Optional:
+**3. (Optional)**
+
 -You may also wish to replace boot graphics in ./bootfiles/bootlogo.png
   and reorganize isolinux.cfg to fit your needs (when editing the file,
   keep all paths in /boot/, it will be rellocated during LiveKit creation)
@@ -42,7 +42,7 @@ in your live distro i.e. a/:
   isolinux sources, patching them using your actual LIVEKITNAME and
   recompiling. This step is not needed if you plan to boot from USB only.
 
-4. When done, run the ./build script to create your Live Kit
+**4.** When done, run the ./build script to create your Live Kit
 >sudo ./build.sh
 
 -The following packages will be installed if they are not available:
@@ -55,10 +55,10 @@ in your live distro i.e. a/:
 
 -- zip
 
-5. After the successful build you will find your livelinux system under the path
+**5.** After the successful build you will find your livelinux system under the path
   given by LIVEKITDATA
  
-6. To create a bootable device you can use the script createBootDevice.sh under scripts
+**6.** To create a bootable device you can use the script createBootDevice.sh under scripts
 
 ## Authors
 
