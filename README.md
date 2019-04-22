@@ -39,10 +39,14 @@ in your live distro i.e. a/:
 >sudo ./build.sh
 
 -The following packages will be installed if they are not available:
-  -- squashfs-tools
-  -- genisoimage or mkisofs
-  -- aufs-dkms
-  -- zip
+
+-- squashfs-tools
+
+-- genisoimage or mkisofs
+
+-- aufs-dkms
+
+-- zip
 
 5. After the successful build you will find your livelinux system under the path
   given by LIVEKITDATA
@@ -53,4 +57,4 @@ in your live distro i.e. a/:
 
 * **Tomas M.** - *initial work* - [Live Linux Kit](http://www.linux-live.org/)
 
-* **Olaf Koch** - *changes for mediakit version* - [mediakit](http://mediakit.education)
+* **Olaf Koch** - *modifications* - [mediakit](http://mediakit.education)
